@@ -155,6 +155,8 @@ router.post(
 
     // 加密密碼
     password = await bcrypt.hash(newPassword, 12);
+
+    // 更新密碼
     const newUser = await User.findByIdAndUpdate(req.user.id, {
       password,
     });
